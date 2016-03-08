@@ -1,4 +1,4 @@
-package <PACKAGE_HERE>;
+package totems;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,8 +11,8 @@ import java.util.Stack;
 
 public class Totems {
 
-    //Pattern is MNS_<STACK POS.>_<POS. IN STACK>, 0 is considered bottom of stack for <POS. IN STACK>
-    private static final String TAG_PREFIX = "MNS"; //used in regex, escape special characters
+    //Pattern is TOTEMS_<STACK POS.>_<POS. IN STACK>, 0 is considered bottom of stack for <POS. IN STACK>
+    private static final String TAG_PREFIX = "TOTEMS"; //used in regex, escape special characters
     private static final String TAG_PATTERN = "^" + TAG_PREFIX + "_[0-9]+_[0-9]+$";
 
     public interface Listener {
@@ -72,7 +72,7 @@ public class Totems {
      * @param listener Object that will be listening to Totems's callbacks
      * @param fm FragmentManager (from support library)
      * @param containerViewIds The {@code R.id} of the views you wish your totems to interact with
-     * @return A new instance of Totems that resume previous state if present
+     * @return A new instance of Totems that resumes the previous state if present
      */
     public static Totems newTotems(Listener listener, FragmentManager fm, int... containerViewIds) {
         return new Totems(listener, fm, containerViewIds);
@@ -82,7 +82,7 @@ public class Totems {
      * Returns the number of totems. This will be equal to the number of container IDs supplied
      * @return Number of totems
      */
-    public int numberOfTotems() {
+    public int totemCount() {
         return totems.size();
     }
 
