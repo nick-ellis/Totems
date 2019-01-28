@@ -1,1 +1,1 @@
-include ':totems-sample', ':totems'
+include ':app', ':totems_lib'
