@@ -21,27 +21,32 @@ class MasterDetailActivity : BaseActivity(), Totems.Listener, ForestFragment.Lis
       fm = supportFragmentManager,
       containerViewIds = listOf(R.id.v_master, R.id.v_detail),
       listener = this,
-      inState = savedInstanceState,
+      inState = savedInstanceState, // If you call totems.save() with onSaveInstanceState, it will automatically restore here!
       notify = true
     )
 
+    // If we are starting fresh, there wont be any fragments yet, so initialize the state
     if (totems.totemIsEmpty(masterTotem)) {
       totems.push(masterTotem, ForestFragment.newInstance(), "Forest")
     }
   }
 
   override fun onSaveInstanceState(outState: Bundle) {
-    totems.save(outState)
+    totems.save(outState) // By calling this we can restore our state with onCreate()
     super.onSaveInstanceState(outState)
   }
 
   override fun totemEmpty(totems: Totems, totem: Int) {
+    if (totem == masterTotem) {
+      onBackPressed() //Nothing left in our master stack, go back
+    }
   }
 
   override fun totemNoLongerEmpty(totems: Totems, totem: Int) {
   }
 
   override fun totemNewFragment(totems: Totems, totem: Int, fragment: Fragment, title: String?) {
+    // Every time a new totem is put on a stack, we can use an optional title to update our toolbar
     title?.let { setTitle(it) }
   }
 
