@@ -1,6 +1,12 @@
 <resources>
+  <string name="i_solid_tree">\uf1bb</string>
+
   <string name="app_name">Totems</string>
-  <string name="action_settings">Settings</string>
+
   <string name="master_detail_demo">Master Detail Demo</string>
+  <string name="about">About</string>
   <string name="trees">Trees</string>
+  <string name="license">License</string>
+
+  <string name="app_uses_fontawesome">This app uses icons from Font Awesome</string>
 </resources>

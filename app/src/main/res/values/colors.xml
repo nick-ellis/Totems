@@ -7,4 +7,5 @@
   <color name="text">#070707</color>
   <color name="divider">#4A4A4A</color>
   <color name="buttonDisabled">#BBBBBB</color>
+  <color name="grayBackground">#C8CBCA</color>
 </resources>

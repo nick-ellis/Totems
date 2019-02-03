@@ -6,6 +6,6 @@ import me.nickellis.totems.sample.BaseActivity
 
 abstract class BaseFragment : Fragment() {
 
-  val baseActivity: BaseActivity? get() = (activity as? BaseActivity)
+  protected val baseActivity: BaseActivity? get() = (activity as? BaseActivity)
 
 }

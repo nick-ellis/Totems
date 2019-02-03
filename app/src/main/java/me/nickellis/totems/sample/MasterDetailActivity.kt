@@ -32,7 +32,7 @@ class MasterDetailActivity : BaseActivity(), Totems.Listener, ForestFragment.Lis
   }
 
   override fun onSaveInstanceState(outState: Bundle) {
-    totems.save(outState) // By calling this we can restore our state with onCreate()
+    totems.save(outState) // By calling this we can restore our state during onCreate()
     super.onSaveInstanceState(outState)
   }
 
@@ -46,7 +46,7 @@ class MasterDetailActivity : BaseActivity(), Totems.Listener, ForestFragment.Lis
   }
 
   override fun totemNewFragment(totems: Totems, totem: Int, fragment: Fragment, title: String?) {
-    // Every time a new totem is put on a stack, we can use an optional title to update our toolbar
+    // Every time a new totem is put on a stack, we can use an optional title to update our toolbar title
     title?.let { setTitle(it) }
   }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/vert_spacing_minor"
+    android:paddingBottom="@dimen/vert_spacing_minor"
+    android:text="This is a header"
+    style="@style/TextHeader"/>
