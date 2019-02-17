@@ -1,7 +1,7 @@
 <resources>
   <string name="i_solid_tree">\uf1bb</string>
 
-  <string name="app_name">Totems</string>
+  <string name="app_name">Towers</string>
 
   <string name="master_detail_demo">Master Detail Demo</string>
   <string name="about">About</string>

@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/totems_lib" />
+            <option value="$PROJECT_DIR$/towers_lib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

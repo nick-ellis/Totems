@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "me.nickellis.totems.sample"
+        applicationId "me.nickellis.towers.sample"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -35,5 +35,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation project(':totems_lib')
+    implementation project(':towers_lib')
 }

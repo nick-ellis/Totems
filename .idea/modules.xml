@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Totems.iml" filepath="$PROJECT_DIR$/Totems.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/totems_lib/totems_lib.iml" filepath="$PROJECT_DIR$/totems_lib/totems_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/towers_lib/towers_lib.iml" filepath="$PROJECT_DIR$/towers_lib/towers_lib.iml" />
     </modules>
   </component>
 </project>

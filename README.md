@@ -1,5 +1,5 @@
-# Totems
-The simple fragment manager that makes transactions easy. Easily manage and restore multiple fragment stacks in your activity. Totems essentially wraps Android's fragment manager in a way to make it more user friendly.
+# Tower
+The simple fragment manager that makes transactions easy. Easily manage and restore multiple fragment stacks in your activity. Towers essentially wraps Android's fragment manager in a way to make it more user friendly.
 
 Pros:
 - [x] No need to bother with the `FragmentManager`
@@ -15,38 +15,38 @@ Cons:
 ## Download
 ```groovy
 dependencies {
-  implementation 'me.nickellis:totems:<VERSION>'
+  implementation 'me.nickellis:towers:<VERSION>'
 }
 ```
 
 ## Demo
 
 ## Usage
-1. Implement `Totems.Listener`
+1. Implement `Towers.Listener`
 ```kotlin
-override fun totemEmpty(totems: Totems, totem: Int) {}
-override fun totemNoLongerEmpty(totems: Totems, totem: Int) {}
-override fun totemNewFragment(totems: Totems, totem: Int, fragment: Fragment, title: String?) {}
+override fun towerEmpty(towers: Towers, tower: Int) {}
+override fun towerNoLongerEmpty(towers: Towers, tower: Int) {}
+override fun towerNewFragment(towers: Towers, tower: Int, fragment: Fragment, title: String?) {}
 ```
 
-2. Initialize totems when `onCreate` is called in your `AppCompatActivity` (currently there is no support for a non-support version of the fragment manager).
+2. Initialize towers when `onCreate` is called in your `AppCompatActivity` (currently there is no support for a non-support version of the fragment manager).
 ```kotlin
-totems = Totems(
+towers = Towers(
    fm = supportFragmentManager,
    containerViewIds = listOf(R.id.v_master, R.id.v_detail), //For every container ID given, a nav stack is created
-   listener = this, // Have your activity implement Totems.Listener, or an object of your choosing.
-   inState = savedInstanceState, // If you call totems.save() with onSaveInstanceState, it will automatically restore here!
-   notify = true // Would you like the listeners called on inialization?
+   listener = this, // Have your activity implement Towers.Listener, or an object of your choosing.
+   inState = savedInstanceState, // If you call towers.save() with onSaveInstanceState, it will automatically restore here!
+   notify = true // Would you like the listeners called on initialization?
 )
 ```
 3. Use!
 ```kotlin
 // If there's no fragment in the first stack, add one    
-if (totems.totemIsEmpty(0)) { 
-   totems.push(0, ForestFragment.newInstance(), "Forest")
+if (towers.emptyAt(0)) { 
+   towers.push(0, ForestFragment.newInstance(), "Forest")
 }
 // Actually, nevermind
-totems.pop(0)
+towers.pop(0)
 ```
 
 
