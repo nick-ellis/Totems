@@ -1,5 +1,6 @@
 # Tower
-The simple fragment manager that makes transactions easy. Easily manage and restore multiple fragment stacks in your activity. Towers essentially wraps Android's fragment manager in a way to make it more user friendly.
+Easily add, remove, and replace fragments to a fragment stack (Tower). A simple fragment manager that handles the work 
+of fragment transactions. Towers essentially wraps Android's fragment manager in a way to make it more user friendly.
 
 Pros:
 - [x] No need to bother with the `FragmentManager`
@@ -29,7 +30,8 @@ override fun towerNoLongerEmpty(towers: Towers, tower: Int) {}
 override fun towerNewFragment(towers: Towers, tower: Int, fragment: Fragment, title: String?) {}
 ```
 
-2. Initialize towers when `onCreate` is called in your `AppCompatActivity` (currently there is no support for a non-support version of the fragment manager).
+2. Initialize towers when `onCreate` is called in your `AppCompatActivity` (currently there is no support for a 
+non-support version of the fragment manager).
 ```kotlin
 towers = Towers(
    fm = supportFragmentManager,
