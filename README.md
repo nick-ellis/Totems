@@ -15,8 +15,11 @@ Cons:
 
 ## Download
 ```groovy
+repositories {
+  jcenter()
+}
 dependencies {
-  implementation 'me.nickellis:towers:<VERSION>'
+  implementation 'me.nickellis:towers:0.9.0'
 }
 ```
 
