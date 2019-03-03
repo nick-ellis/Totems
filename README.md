@@ -19,7 +19,7 @@ repositories {
   jcenter()
 }
 dependencies {
-  implementation 'me.nickellis:towers:0.9.0'
+  implementation 'me.nickellis.towers:towers:0.9.0'
 }
 ```
 
