@@ -302,7 +302,7 @@ class Towers @JvmOverloads constructor(
                 if (newTower.size > 0 && newTower.peek().fragment().isDetached)
                     trans.attach(newTower.peek().fragment())
 
-                tryCommit(trans)
+                trans.tryCommit()
 
                 towers[towerLoc] = newTower
                 if (notify && tower.size > 0 && newTower.size == 0) {
@@ -352,7 +352,7 @@ class Towers @JvmOverloads constructor(
         val trans = fm.beginTransaction()
         trans.remove(oldFragment)
         trans.add(containerViewIds[towerLoc], newFragment, getFragmentTag(towerLoc, location))
-        tryCommit(trans)
+        trans.tryCommit()
     }
 
     private fun fmAddFragment(towerLoc: Int, location: Int, fragment: Fragment) {
@@ -366,7 +366,7 @@ class Towers @JvmOverloads constructor(
             }
         }
 
-        tryCommit(trans)
+        trans.tryCommit()
     }
 
     private fun fmRemoveFragment(fragment: Fragment) {
@@ -381,7 +381,7 @@ class Towers @JvmOverloads constructor(
             }
         }
 
-        tryCommit(trans)
+        trans.tryCommit()
     }
 
     private fun fmClearFragments(towerLoc: Int) {
@@ -390,16 +390,16 @@ class Towers @JvmOverloads constructor(
         if (fragsToRemove.isNotEmpty()) {
             val trans = fm.beginTransaction()
             fragsToRemove.forEach { trans.remove(it) }
-            tryCommit(trans)
+            trans.tryCommit()
         }
     }
 
-    private fun tryCommit(transaction: FragmentTransaction) {
+    private fun FragmentTransaction.tryCommit() {
         try {
-            transaction.commit()
+            commit()
         } catch (ise: IllegalStateException) {
             try {
-                transaction.commitAllowingStateLoss()
+                commitAllowingStateLoss()
                 logger.onError(ise, "Unable to commit transaction without state loss")
             } catch (ex: Exception) {
                 logger.onError(ex, "Transaction commit error")
